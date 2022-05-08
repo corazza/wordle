@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.guesscontainer {
+    text-transform: uppercase;
+}
+
+td {
+    border: solid 1px;
+    padding: 5px;
+    width: 1em;
+    height: 1em;
+}
+
+th {
+    border: none;
+}
+
+.correctPosition {
+    background-color: greenyellow;
+}
+
+.correctLetter {
+    background-color: burlywood;
+}
+
+.regular {
+    background-color: white;
+}
