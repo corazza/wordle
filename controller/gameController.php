@@ -6,9 +6,9 @@ class GameController extends BaseController
     $ws = new WordleService();
     $context = $ws->getContextFor($name);
 
-    echo "context: ";
-    print_r($context);
-    echo "<br/>";
+    // echo "context: ";
+    // print_r($context);
+    // echo "<br/>";
 
     $this->registry->template->title = 'Wordle';
     $this->registry->template->name = $context->name;
@@ -18,6 +18,7 @@ class GameController extends BaseController
     $this->registry->template->sup_attempts = $context->sup_attempts;
     $this->registry->template->hints = $context->hints;
     $this->registry->template->big_hints = $context->big_hints;
+    $this->registry->template->length_error = $_SESSION["length_error"];
     $this->registry->template->green_color = getGreenColorIndex($context);
     $this->registry->template->brown_color = getBrownColorIndex($context);
 
@@ -26,6 +27,8 @@ class GameController extends BaseController
     } else {
       $this->registry->template->show('game_index');
     }
+
+    $_SESSION["length_error"] = false;$_SESSION["length_error"];
   }
 
   public function index()
@@ -89,6 +92,7 @@ class GameController extends BaseController
       $ws->makeAttempt($name, $attempt);
     } else {
       $ws->addSupAttempt($name);
+      $_SESSION["length_error"] = true;
     }
     $this->showGameFor($name);
   }

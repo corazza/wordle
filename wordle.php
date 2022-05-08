@@ -5,6 +5,7 @@ define( '__SITE_URL', dirname( $_SERVER['PHP_SELF'] ) );
 
 // Započnemo/nastavimo session
 session_start();
+$_SESSION["length_error"] = false;
 
 // Inicijaliziraj aplikaciju (učitava bazne klase, autoload klasa iz modela).
 require_once 'app/init.php';

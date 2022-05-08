@@ -34,3 +34,7 @@ th {
 .regular {
     background-color: white;
 }
+
+.error {
+    color: red;
+}

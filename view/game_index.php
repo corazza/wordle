@@ -7,6 +7,7 @@ Duljina: <?php echo $length ?>
 <br/>
 Broj pokusaja: <?php echo count($attempts) + $sup_attempts ?>
 <br/>
+<br/>
 
 <?php print_big_hints($length, $big_hints) ?>
 
@@ -28,6 +29,14 @@ Broj pokusaja: <?php echo count($attempts) + $sup_attempts ?>
     <br/>
     <button type="submit">Izvrsi akciju</button>
 </form>
+
+<br />
+
+<?php 
+if ($length_error) {
+    echo '<div class="error">Kriva duljina!</div>';
+}
+?>
 
 <br />
 
