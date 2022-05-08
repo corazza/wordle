@@ -6,9 +6,9 @@ class GameController extends BaseController
     $ws = new WordleService();
     $context = $ws->getContextFor($name);
 
-    // echo "context: ";
-    // print_r($context);
-    // echo "<br/>";
+    echo "context: ";
+    print_r($context);
+    echo "<br/>";
 
     $this->registry->template->title = 'Wordle';
     $this->registry->template->name = $context->name;

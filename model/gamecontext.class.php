@@ -7,7 +7,7 @@ class GameContext
 
 	public function addAttempt($attempt) {
 		$green_color = correctPositions($this->length, $attempt, $this->word);
-		foreach ($green_color as $position => $value) {
+		foreach ($green_color as $position) {
 			if (!array_key_exists($position, $this->big_hints)) {
 				$this->hidden_big_hints[$position] = 1;
 			}
