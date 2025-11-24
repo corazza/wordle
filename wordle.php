@@ -1,7 +1,7 @@
 <?php
 
 define( '__SITE_PATH', realpath( dirname( __FILE__ ) ) );
-define( '__SITE_URL', dirname( $_SERVER['PHP_SELF'] ) );
+define('__SITE_URL', rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'));
 
 // Započnemo/nastavimo session
 session_start();
